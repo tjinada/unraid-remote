@@ -31,6 +31,7 @@ committed.
 
 ## Status
 
-Files Workspace v2 complete — a single resizable workspace: dual-pane file
-explorer (drag-and-drop move/copy, permissions editor) over a docked,
-fullscreen-capable terminal with shortcuts. Next: PWA polish + push wiring.
+Files Workspace v2 + PWA polish complete — a single resizable workspace
+(dual-pane explorer with drag-and-drop, permissions editor, docked terminal),
+installable with an install prompt and offline indicator, and Dockerised for
+unraid. Push notifications are scaffolded but not wired (deferred).
