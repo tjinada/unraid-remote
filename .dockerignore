@@ -1,0 +1,18 @@
+# Never copy these into the build context / image
+node_modules
+**/node_modules
+dist
+**/dist
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+data
+**/*.log
+*.tsbuildinfo
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+docs
