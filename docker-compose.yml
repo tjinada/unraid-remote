@@ -5,19 +5,13 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    # Pull every value (APP_*, JWT_SECRET, SSH_*, ALLOWED_ROOTS, VAPID_*) from .env
+    env_file:
+      - .env
+    # Container-specific overrides (these win over .env)
     environment:
       NODE_ENV: production
-      PORT: 3000
-      APP_USER: ${APP_USER:-admin}
-      APP_PASS: ${APP_PASS:?set APP_PASS}
-      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET}
+      PORT: "3000"
       DATA_DIR: /data
-      # SSH target (Phase 2):
-      # SSH_HOST: 192.168.1.10
-      # SSH_PORT: 22
-      # SSH_USER: root
-      # SSH_PASS:
-      # File sandbox (Phase 4):
-      # ALLOWED_ROOTS: /mnt/user,/boot
     volumes:
       - ./data:/data
