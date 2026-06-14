@@ -1,0 +1,25 @@
+{
+  "name": "unraidpwa",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PWA to control an unraid box: terminal with shortcuts + file explorer",
+  "scripts": {
+    "dev": "pnpm --filter @unraidpwa/shared build && concurrently \"pnpm dev:shared\" \"pnpm dev:backend\" \"pnpm dev:frontend\"",
+    "dev:shared": "pnpm --filter @unraidpwa/shared build --watch",
+    "dev:frontend": "pnpm --filter @unraidpwa/frontend dev",
+    "dev:backend": "pnpm --filter @unraidpwa/backend dev",
+    "build": "pnpm --filter @unraidpwa/shared build && pnpm --filter @unraidpwa/backend build && pnpm --filter @unraidpwa/frontend build",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean && rimraf node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.11.0"
+}
